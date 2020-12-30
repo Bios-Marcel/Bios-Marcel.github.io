@@ -33,18 +33,18 @@
 <h1>Go lacks enums</h1>
 <p class="authoring-date">Written on 20 September 2020</p>
 <p>As a Java programmer, I heavily make use of enums.
-The reason is quite simple. Whenever I have a fixed set of values, i can easy
+The reason is quite simple. Whenever I have a fixed set of values, i can easily
 iterate over them and switch over them. The reason why I really like switching
 over enums though, is that I am using an IDE that notifies me of every switch
 that doesn't handle all possible values of an enum. Let's say I had the
-following code:</p>
+following Java code:</p>
 
 <code><pre>
 public enum CarManufacturers {
   FIAT,
   FORD,
   MERCEDES,
-  OPEN;
+  OPEL;
 }
 
 void someFunction(CarManufacturer manufacturer) {

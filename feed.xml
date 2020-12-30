@@ -10,18 +10,18 @@
       <link>https:/marcelschr.me/articles/go-lacks-enums.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>As a Java programmer, I heavily make use of enums.
-The reason is quite simple. Whenever I have a fixed set of values, i can easy
+The reason is quite simple. Whenever I have a fixed set of values, i can easily
 iterate over them and switch over them. The reason why I really like switching
 over enums though, is that I am using an IDE that notifies me of every switch
 that doesn't handle all possible values of an enum. Let's say I had the
-following code:</p>
+following Java code:</p>
 
 <code><pre>
 public enum CarManufacturers {
   FIAT,
   FORD,
   MERCEDES,
-  OPEN;
+  OPEL;
 }
 
 void someFunction(CarManufacturer manufacturer) {
@@ -176,7 +176,7 @@ System.out.println(user.getRegisteredDate());
     </item>
     <item>
       <title>Don&#39;t be sorry</title>
-      <link>https:/marcelschr.me/articles/dont-be-sorry copy.html</link>
+      <link>https:/marcelschr.me/articles/dont-be-sorry.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Something I have noticed in the open source community
 and also in myself specifically, is that people feel guilty for things they
@@ -209,7 +209,7 @@ circumflex after hitting the key twice.</p>
 <p>After a short search on StackOverflow, I found out, that reset doesn't
 actually drop a commit. Instead the branch will just stop tracking that
 commit. Meaning that you can still access the commit, as long as you still
-have the commit-hash or you can try finding it with </code>git reflog<code>.</p>
+have the commit-hash or you can try finding it with <code>git reflog</code>.</p>
 
 <p>After reading the man-page for <code>git reset</code> this also makes sense, since all
 that <code>git reset</code> is doing, is to modify the index and optionally your working
