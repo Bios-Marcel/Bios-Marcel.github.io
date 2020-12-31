@@ -134,9 +134,9 @@ that don't return a value and one for the ones that do. For the sake of keeping
 this post a bit smaller, I've simplified it a lot:</p>
 
 <code><pre>
-public static synchronized <ServiceType extends Remote, ResultType> ResultType get(
-  final Class<ServiceType> serviceClass,
-  final ServiceResultFunction<ServiceType, ResultType> methodcall,
+public static synchronized &lt;ServiceType extends Remote, ResultType&gt; ResultType get(
+  final Class&lt;ServiceType&gt; serviceClass,
+  final ServiceResultFunction&lt;ServiceType, ResultType&gt; methodcall,
   final int amountOfRetries)
 {
   try {
@@ -154,9 +154,9 @@ public static synchronized <ServiceType extends Remote, ResultType> ResultType g
   }
 }
 
-public static synchronized <ServiceType extends Remote, ResultType> ResultType get(
-  final Class<ServiceType> serviceClass,
-  final ServiceResultFunction<ServiceType, ResultType> methodcall.
+public static synchronized &lt;ServiceType extends Remote, ResultType&gt; ResultType get(
+  final Class&lt;ServiceType&gt; serviceClass,
+  final ServiceResultFunction&lt;ServiceType, ResultType&gt; methodcall.
   final int amountOfRetries )
 {
   ...
