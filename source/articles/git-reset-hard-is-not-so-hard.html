@@ -1,0 +1,22 @@
+{{define "title"}}git reset --hard isn't that hard{{end}}
+{{define "date"}}2019-11-29{{end}}
+{{define "tags"}}git,vcs{{end}}
+{{define "content"}}<p>Like the experienced git user that I am, I accidentally deleted some of my
+code. I did this by running <code>git reset --hard HEAD^^</code>. I meant to only insert
+one circumflex, but that key acts differently on windows than it does on linux.
+Sadly I am already way too used to the linux behaviour, which only inserts one
+circumflex after hitting the key twice.</p>
+
+<p>After a short search on StackOverflow, I found out, that reset doesn't
+actually drop a commit. Instead the branch will just stop tracking that
+commit. Meaning that you can still access the commit, as long as you still
+have the commit-hash or you can try finding it with <code>git reflog</code>.</p>
+
+<p>After reading the man-page for <code>git reset</code> this also makes sense, since all
+that <code>git reset</code> is doing, is to modify the index and optionally your working
+tree.</p>
+
+<p>However, this is even more interesting, when you are deleting a branch. A
+branch is really nothing more than a chain of tracked commits. So even after
+deleting a branch, you can still find the commits in the reflog. And simply
+<code>git cherry-pick</code> whatever you need.</p>{{end}}

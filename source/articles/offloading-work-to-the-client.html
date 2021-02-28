@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-<link rel="stylesheet" type="text/css" href="/base.css">
-
-<link rel="icon" href="data:,"/>
-<title>About offloading work to the client | Marcel Schramm</title>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-<meta name="author" content="Marcel Schramm"/>
-<meta name="description" content="My thoughts on why sharing logic between different client implementations via the server is good." />
-<meta property="og:locale" content="en_GB"/>
-<meta property="og:site_name" content="Marcel Schramm"/>
-<meta property="og:title" content="About offloading work to the client" />
-<meta property="og:type" content="article"/>
-<meta property="article:published_time" content="2019-05-13T00:00:00Z" />
-</head>
-<body>
-<header>
-<div class="site-info">
-<span class="site-name"><a href="/">Marcel Schramm</a></span>
-</div>
-<nav>
-<a class="menu-link" href="/">Home</a>
-<a class="menu-link" href="/pages/about.html">About</a>
-</nav>
-</header>
-<article>
-<h1>About offloading work to the client</h1>
-<p class="authoring-date">Written on 13 May 2019</p>
-<p>I have been working on an open source Discord client
+{{define "title"}}About offloading work to the client{{end}}
+{{define "date"}}2019-05-13{{end}}
+{{define "description"}}My thoughts on why sharing logic between different client implementations via the server is good.{{end}}
+{{define "content"}}<p>I have been working on an open source Discord client
 for a while, it uses the official REST API and tries to reproduce the
 features of the original electron client. When I got to the point where I
 could actually chat, one of the first things I tried, was sending emojis.
@@ -93,22 +65,4 @@ me personally?
 <p>My own approach is usually to avoid writing business logic more than once,
 since it usually just introduces more work in the long-run. As it shouldn't be
 a problem as long as you don't have scaling problems, whether due to money
-restrictions or hardware restrictions.</p>
-<script src="https://utteranc.es/client.js"
-        repo="Bios-Marcel/bios-marcel.github.io"
-        issue-term="title"
-        theme="preferred-color-scheme"
-        async>
-</script>
-<noscript>
-<p><b>If you wish to access the comment section, you need to enable JavaScript.</b></p>
-</noscript>
-</article>
-<footer>
-<hr>
-<div class="footer-bar">
-<a href="/feed.xml">RSS-Feed</a>
-</div>
-</footer>
-</body>
-</html>
+restrictions or hardware restrictions.</p>{{end}}

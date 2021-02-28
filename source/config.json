@@ -1,0 +1,11 @@
+{
+	"SiteName":"Marcel Schramm",
+	"Author":"Marcel Schramm",
+	"URL":"https://marcelschr.me",
+	"Description":"thoughts on random topics, but mostly tech",
+	"Email":"marcelschr@protonmail.com",
+	"CreationDate":"2018-05-27T00:00:00+00:00",
+	"UtterancesRepo": "Bios-Marcel/bios-marcel.github.io",
+	"AddOptionalMetaData": true,
+	"UseFavicon": false
+}
