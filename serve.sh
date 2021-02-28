@@ -1,0 +1,1 @@
+stasi-blog serve ./
