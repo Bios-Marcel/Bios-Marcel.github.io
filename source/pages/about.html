@@ -1,7 +1,5 @@
 {{define "title"}}About{{end}}
-{{define "content"}}<p>I am {{.Author}}, I live in Germany and I am currently a junior Java SE developer. I do both frontend and backend.</p>
-
-<p>In my free time I mostly play games, watch anime and write software.</p>
+{{define "content"}}<p>I am {{.Author}},&nbsp;<span id="age"><noscript>24+</noscript></span>&nbsp;years old and live in Germany. Currently I am working as a golang developer on the backend side of things.</p>
 
 <p>On this blog I’ll occasionally write about experiences and thoughts that I’ve had.</p>
 
@@ -14,4 +12,16 @@
 
 E-Mail: <a href="mailto:{{.Email}}">{{.Email}}</a><br/>
 Matrix: @biosmarcel:matrix.org
+
+<script type="text/javascript">
+    const bDay = new Date("May 26, 1998")
+    const today = new Date();
+    let age = today.getFullYear() - bDay.getFullYear();
+    if (today.getMonth() < bDay.getMonth()) {
+        age = age - 1
+    } else if (today.getMonth() == bDay.getMonth() && today.getDay() < bDay.getDay()) {
+        age = age - 1;
+    }
+    document.getElementById("age").innerText = "" + age;
+</script>
 {{end}}
