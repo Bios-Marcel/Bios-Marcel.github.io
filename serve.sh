@@ -1,1 +1,1 @@
-stasi-blog serve ./
+stasi-blog serve ./docs
