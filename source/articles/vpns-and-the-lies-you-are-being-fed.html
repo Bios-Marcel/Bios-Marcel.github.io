@@ -13,22 +13,20 @@ encryption of your traffic&quot;</em>. Now that sure sounds great, right? Err ..
 really. While encryption would prevent someone from reading or manipulating
 your data, you can't simply End-To-End encrypt any traffic.</p>
 
-<p>Usually when you make a requet over the internet, you (the host) create your
+<p>Usually when you make a request over the internet, you (the client) create your
 request and target some other machine (the server), that lies somewhere else.
 Since you are not directly connected to the server (in the same local area
 network), your request has to be routed over the internet, meaning it will
 hop from device to device, trying to find the most efficient route to your
 requests target.</p>
 
-<p>So yes, theoretically you could now encrypt this request before sending it, but
-your target server would not understand your encrypted request, since it has no
-clue about how to decrypt it. So what a VPN means when it claims that it
-encrypts your traffic, is that the route to the VPN (your man in the middle),
-will be fully encrypted. As soon as your VPN has proxied your request to your
-actual target, your traffic will look the same as it did before encrypting it.
-This doesn't mean that unless you use a VPN your traffic is always unencrypted.
-As long as your requests uses some protocol that has encryption built-in, your
-data will still be encrypted til it reaches the requests target.</p>
+<p>So yes, the VPN could theoretically encrypt your request before sending it
+to the server, however, this would break the request, as the server could not
+decrypt it. So what actually happens, is that the VPN receives encrypted
+traffic, which it then decrypts and forwards to your actual target server.
+Now, usually that traffic is already encrypted, as most traffic nowadays is
+HTTPS. 
+</p>
 
 <p>So, what does this mean in the end? It means you don't really achieve privacy
 just by using some VPN service.</p>
