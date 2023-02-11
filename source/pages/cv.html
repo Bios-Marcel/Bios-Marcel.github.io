@@ -1,0 +1,76 @@
+{{define "title"}}CV{{end}}
+{{define "content"}}
+<style type="text/css">
+    .cv-table {
+        display: grid;
+        column-gap: 1rem;
+        row-gap: 0.65rem;
+        grid-template-rows: auto;
+        grid-template-columns: max-content max-content max-content;
+    }
+
+    h2 {
+        grid-column: 1 / span 3;
+    }
+
+    @media print {
+        header,
+        footer,
+        aside,
+        form
+        {
+            display: none;
+        }
+
+        * {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+
+        h2 {
+            padding-top: 1rem;
+        }
+    }
+
+    @page {
+        margin: 2cm;
+    }
+</style>
+
+<div class="cv-table">
+    <h2>Tech Skills</h2>
+    <span>Golang</span><span>2018 - Now</span><span>Good</span>
+    <span>Java</span><span>2016 - 2021</span><span>Good</span>
+    <span>Kotlin</span><span>On and Off</span><span>Good</span>
+    <span>Web-Dev</span><span>On and Off</span><span>Average</span>
+    <span>Backend-Dev</span><span>2016 - Now</span><span>Good</span>
+    <span>Pawn</span><span>2012 - 2018</span><span>Average</span>
+    <span>Git</span><span>2016 - Now</span><span>Good</span>
+    <span>SVN</span><span>2016 - 2021</span><span>Average</span>
+    <span>SQL</span><span>2014 - Now</span><span>Average</span>
+    <span>Linux</span><span>2010 - Now</span><span>Good</span>
+    <span>Scripting</span><span>On and Off</span><span>Average</span>
+    <span>Docker</span><span>2021 - Now</span><span>Average</span>
+    <span>Code Reviews, Testing and co.</span><span>2016 - Now</span><span>Good</span>
+
+    <h2>Noteworthy Projects</h2>
+    <a href="https://github.com/scribble-rs/scribble.rs">scribble.rs</a><span>Golang</span><span>An open source
+        alternative to skribbl.io</span>
+    <a href="https://github.com/Bios-Marcel/wastebasket">wastebasket</a><span>Golang</span><span>A library to interact
+        with the system recycle bin</span>
+    <a href="https://github.com/bios-Marcel/serverbrowser">SA-MP Server Browser / Launcher</a><span>Java /
+        Kotlin</span><span>A modern alternative to the SA-MP client</span>
+
+    <h2>Languages</h2>
+    <span>English</span><span>Golang</span><span>Fluent</span>
+    <span>German</span><span>Golang</span><span>Native</span>
+
+    <h2>Education</h2>
+    <span>Vocational School for IT and Electronics</span><span>08.2014 - 08.2015</span><span>BBS Burgdorf</span>
+    <span>Software Developer Apprenticeship</span><span>01.2016 - 08.2019</span><span>isp-insoft GmbH</span>
+
+    <h2>Employment History</h2>
+    <span>Java Developer</span><span>08.2019 - 12.2021</span><span>isp-insoft GmbH</span>
+    <span>Golang Developer</span><span>01.2022 - Now</span><span>VIER GmbH</span>
+</div>
+{{end}}
