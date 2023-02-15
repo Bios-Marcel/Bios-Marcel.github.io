@@ -1,1 +1,1 @@
-stasi-blog build --minify -o ./docs ./source/
+stasi-blog build -v --minify -o ./docs ./source/
