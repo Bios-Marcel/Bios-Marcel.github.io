@@ -384,7 +384,7 @@ for one that suites you. The site allows searching through the tasks with a
 paginated list and a component on the left side of the website where you
 can select your target languages.
 
-<img src="https://raw.githubusercontent.com/bios-marcel/Bios-Marcel.github.io/master/images/uxonwebsites/thepage.png" loading="lazy" alt="Screenshot of the website"/>
+<img src="/media/uxonwebsites/thepage.png" loading="lazy" alt="Screenshot of the website"/>
 
 <p>This is what the site looks like. The width of my browser window is <em>960px</em>
 and is used as follows:</p>
@@ -436,7 +436,7 @@ exactly what it should do.</p>
 the available issues for JavaScript, just to see how many there are. Right
 below the list is a pagination component:</p>
 
-<img src="https://raw.githubusercontent.com/bios-marcel/Bios-Marcel.github.io/master/images/uxonwebsites/pagination_currently.png" loading="lazy" alt="pagination component"/>
+<img src="/media/uxonwebsites/pagination_currently.png" loading="lazy" alt="pagination component"/>
 
 <p>It uses <em>180px</em> of the screens width, no matter what the width of
 your window is. You got two buttons, one for left and one for right. At
@@ -455,7 +455,7 @@ as well. You could have just shown me three items for three pages.</p>
 <p>Now this is what the component should've looked like if there were more items,
 than the page could actually fit:</p>
 
-<img src="https://raw.githubusercontent.com/bios-marcel/Bios-Marcel.github.io/master/images/uxonwebsites/pagination_dream.png" loading="lazy" alt="The dream I have"/>
+<img src="/media/uxonwebsites/pagination_dream.png" loading="lazy" alt="The dream I have"/>
 
 <p>With this you'd be able to:</p>
 
