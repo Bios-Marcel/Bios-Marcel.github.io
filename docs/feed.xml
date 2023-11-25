@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Marcel Schramm</title>
-    <link>https://marcelschr.me</link>
+    <link>https://bios-marcel.link</link>
     <description>thoughts on random topics, but mostly tech</description>
     <managingEditor>marcelschr@protonmail.com (Marcel Schramm)</managingEditor>
     <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
     <item>
       <title>Dear Recruiters</title>
-      <link>https://marcelschr.me/articles/dear-recruiters.html</link>
+      <link>https://bios-marcel.link/articles/dear-recruiters.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Every now and then I get E-Mails (or messages on
 certain services) from a recruiter. Most of the time, these people are very
@@ -33,7 +33,7 @@ appointment, which was simply untrue.<p>
     </item>
     <item>
       <title>Go lacks enums</title>
-      <link>https://marcelschr.me/articles/go-lacks-enums.html</link>
+      <link>https://bios-marcel.link/articles/go-lacks-enums.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>As a Java programmer, I heavily make use of enums.
 The reason is quite simple. Whenever I have a fixed set of values, i can easily
@@ -108,7 +108,7 @@ compiler basically can't know whether you've handled all cases.</p>]]></content:
     </item>
     <item>
       <title>Java RMI - Better error handling and performance with lambdas</title>
-      <link>https://marcelschr.me/articles/java-rmi-better-rmi.html</link>
+      <link>https://bios-marcel.link/articles/java-rmi-better-rmi.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Even though Java RMI is already very old and has some problems, there are
 still a lot of application that use it. While some applications have no
@@ -204,7 +204,7 @@ System.out.println(user.getRegisteredDate());
     </item>
     <item>
       <title>Don&#39;t be sorry</title>
-      <link>https://marcelschr.me/articles/dont-be-sorry.html</link>
+      <link>https://bios-marcel.link/articles/dont-be-sorry.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Something I have noticed in the open source community
 and also in myself specifically, is that people feel guilty for things they
@@ -227,7 +227,7 @@ However, feeling bad won't help me or anyone else for that matter.</p>]]></conte
     </item>
     <item>
       <title>git reset --hard isn&#39;t that hard</title>
-      <link>https://marcelschr.me/articles/git-reset-hard-is-not-so-hard.html</link>
+      <link>https://bios-marcel.link/articles/git-reset-hard-is-not-so-hard.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Like the experienced git user that I am, I accidentally deleted some of my
 code. I did this by running <code>git reset --hard HEAD^^</code>. I meant to only insert
@@ -253,7 +253,7 @@ deleting a branch, you can still find the commits in the reflog. And simply
     </item>
     <item>
       <title>Installing Fedora 31 on a Macbook Pro 2014</title>
-      <link>https://marcelschr.me/articles/installing-fedora-on-mbp.html</link>
+      <link>https://bios-marcel.link/articles/installing-fedora-on-mbp.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>The last time I decided to install something else than
 Mac OS on my Macbook, I decided to install an arch-based distribution. My
@@ -306,7 +306,7 @@ were really pleasant to use.</p>
     </item>
     <item>
       <title>Don&#39;t refork a GitHub repository every time you want to contribute</title>
-      <link>https://marcelschr.me/articles/do-not-refork-a-project-every-time-you-contribute.html</link>
+      <link>https://bios-marcel.link/articles/do-not-refork-a-project-every-time-you-contribute.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Sometimes people contribute to one of my
 projects, and every time that they want to contribute, they delete
@@ -372,7 +372,7 @@ git push --force
     </item>
     <item>
       <title>UX on websites</title>
-      <link>https://marcelschr.me/articles/ux-on-websites.html</link>
+      <link>https://bios-marcel.link/articles/ux-on-websites.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Rant time!</p>
 
@@ -483,7 +483,7 @@ in fact think, that the site looks visually pleasing.</p>]]></content:encoded>
     </item>
     <item>
       <title>About offloading work to the client</title>
-      <link>https://marcelschr.me/articles/offloading-work-to-the-client.html</link>
+      <link>https://bios-marcel.link/articles/offloading-work-to-the-client.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>I have been working on an open source Discord client
 for a while, it uses the official REST API and tries to reproduce the
@@ -555,7 +555,7 @@ restrictions or hardware restrictions.</p>]]></content:encoded>
     </item>
     <item>
       <title>VPNs and the lies you are being fed</title>
-      <link>https://marcelschr.me/articles/vpns-and-the-lies-you-are-being-fed.html</link>
+      <link>https://bios-marcel.link/articles/vpns-and-the-lies-you-are-being-fed.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Today I'd like to talk about VPNs, despite
 the fact that many people have probably already told you the same
@@ -618,7 +618,7 @@ yourself or abandon all your values.</p>]]></content:encoded>
     </item>
     <item>
       <title>Be careful when moving files within a git repository</title>
-      <link>https://marcelschr.me/articles/careful-moving-files-in-git-repositories%20copy.html</link>
+      <link>https://bios-marcel.link/articles/careful-moving-files-in-git-repositories%20copy.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>So, today I learned something interesting about git that I have been doing
 wrong way too often without even noticing it.</p>
@@ -698,7 +698,7 @@ of the content in one commit.</p>]]></content:encoded>
     </item>
     <item>
       <title>But we have full test coverage</title>
-      <link>https://marcelschr.me/articles/but-we-have-full-test-coverage.html</link>
+      <link>https://bios-marcel.link/articles/but-we-have-full-test-coverage.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>I often see people claiming that their tests are as good as they could
 get, since they have full (100%) test coverage. And obviously 100% coverage
@@ -785,7 +785,7 @@ that aren't handled or even <abbr title="code that can never be called, no matte
     </item>
     <item>
       <title>What do I think about Go</title>
-      <link>https://marcelschr.me/articles/what-do-i-think-about-go.html</link>
+      <link>https://bios-marcel.link/articles/what-do-i-think-about-go.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>I have been doing Go for a while now and so far I have enjoyed it. Why do I
 enjoy it though? First, let's look at my past!</p>
@@ -853,7 +853,7 @@ projects, which means that I'll probably face bigger problems.</p>]]></content:e
     </item>
     <item>
       <title>Think Twice Before Using Varargs</title>
-      <link>https://marcelschr.me/articles/think-twice-before-using-varargs.html</link>
+      <link>https://bios-marcel.link/articles/think-twice-before-using-varargs.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Varargs, which is short for
 <a href="https://en.wikipedia.org/wiki/Variadic_function">variadic arguments</a>,
@@ -969,7 +969,7 @@ be worse performance wise, even though this would usually not be critical.]]></c
     </item>
     <item>
       <title>Why do people expect software to be for free?</title>
-      <link>https://marcelschr.me/articles/why-do-people-expect-software-to-be-for-free.html</link>
+      <link>https://bios-marcel.link/articles/why-do-people-expect-software-to-be-for-free.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>
 Recently I have been wondering why everyone seems to expect software
@@ -1079,7 +1079,7 @@ services should be free?
     </item>
     <item>
       <title>A Month Into Solus Budgie</title>
-      <link>https://marcelschr.me/articles/back-to-linux.html</link>
+      <link>https://bios-marcel.link/articles/back-to-linux.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>A while ago I decided to start abandoning proprietary services, one of those was windows.<p>
 
