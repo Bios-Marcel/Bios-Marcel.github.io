@@ -1,7 +1,9 @@
-{{define "title"}}About offloading work to the client{{end}}
-{{define "date"}}2019-05-13{{end}}
-{{define "description"}}My thoughts on why sharing logic between different client implementations via the server is good.{{end}}
-{{define "content"}}<p>I have been working on an open source Discord client
+title: About offloading work to the client
+date: 2019-05-13
+description: My thoughts on why sharing logic between different client implementations via the server is good.
+
+---
+<p>I have been working on an open source Discord client
 for a while, it uses the official REST API and tries to reproduce the
 features of the original electron client. When I got to the point where I
 could actually chat, one of the first things I tried, was sending emojis.
@@ -65,4 +67,4 @@ me personally?
 <p>My own approach is usually to avoid writing business logic more than once,
 since it usually just introduces more work in the long-run. As it shouldn't be
 a problem as long as you don't have scaling problems, whether due to money
-restrictions or hardware restrictions.</p>{{end}}
+restrictions or hardware restrictions.</p>

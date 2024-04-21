@@ -10,24 +10,26 @@
       <link>https://bios-marcel.link/articles/dear-recruiters.html</link>
       <description>thoughts on random topics, but mostly tech</description>
       <content:encoded><![CDATA[<p>Every now and then I get E-Mails (or messages on
-certain services) from a recruiter. Most of the time, these people are very
-unlikable.</p>
+    certain services) from a recruiter. Most of the time, these people are very
+    unlikable.</p>
 
 <p>They act like you have a super interesting profile, even though
-you don't. They won't look at the work you've done, neither the professional
-work, nor the open source stuff. They won't care about what you've configured
-the preferences for your next job to be, they don't care about what you like
-or dislike. They don't care what city you want to work in, whether you want to
-work remotely (or in an office, like me) or whether you aren't interested in
-full-time offers. They don't even care whether you've ignored their previous
-20 messages. They also try their hardest to get your telephone number, so they
-can annoy you every now and then.</p>
+    you don't. They won't look at the work you've done, neither the professional
+    work, nor the open source stuff. They won't care about what you've configured
+    the preferences for your next job to be, they don't care about what you like
+    or dislike. They don't care what city you want to work in, whether you want to
+    work remotely (or in an office, like me) or whether you aren't interested in
+    full-time offers. They don't even care whether you've ignored their previous
+    20 messages. They also try their hardest to get your telephone number, so they
+    can annoy you every now and then.</p>
 
 <p>At some point, one of them even called my (back then) employer
-and told them I talked to them about a job change and that we had an
-appointment, which was simply untrue.<p>
+    and told them I talked to them about a job change and that we had an
+    appointment, which was simply untrue.
+<p>
 
-<p><b>Please give a shit about the people you want to hire :)</b></p>]]></content:encoded>
+<p><b>Please give a shit about the people you want to hire :)</b></p>
+]]></content:encoded>
       <author>marcelschr@protonmail.com (Marcel Schramm)</author>
       <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
     </item>
@@ -202,7 +204,8 @@ User user = Services.get(UserService.class, userService -> userService.findByID(
 System.out.println(user.getRegisteredDate());
 </pre></code>
 
-<p>I hope this will help someone in the future ;)</p>]]></content:encoded>
+<p>I hope this will help someone in the future ;)</p>
+]]></content:encoded>
       <author>marcelschr@protonmail.com (Marcel Schramm)</author>
       <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
     </item>
@@ -481,7 +484,8 @@ without unneccesarily complicating the component.</p>
 
 <p>So what did we learn? Just because something looks good, that doesn't make it
 useful. Next time think about your UX before implementing the UI. And yes, I do
-in fact think, that the site looks visually pleasing.</p>]]></content:encoded>
+in fact think, that the site looks visually pleasing.</p>
+]]></content:encoded>
       <author>marcelschr@protonmail.com (Marcel Schramm)</author>
       <pubDate>Sat, 08 Jun 2019 00:00:00 +0000</pubDate>
     </item>

@@ -1,7 +1,9 @@
-{{define "title"}}git reset --hard isn't that hard{{end}}
-{{define "date"}}2019-11-29{{end}}
-{{define "tags"}}git,vcs{{end}}
-{{define "content"}}<p>Like the experienced git user that I am, I accidentally deleted some of my
+title: git reset --hard isn't that hard
+date: 2019-11-29
+tags: [git,vcs]
+
+---
+<p>Like the experienced git user that I am, I accidentally deleted some of my
 code. I did this by running <code>git reset --hard HEAD^^</code>. I meant to only insert
 one circumflex, but that key acts differently on windows than it does on linux.
 Sadly I am already way too used to the linux behaviour, which only inserts one
@@ -19,4 +21,4 @@ tree.</p>
 <p>However, this is even more interesting, when you are deleting a branch. A
 branch is really nothing more than a chain of tracked commits. So even after
 deleting a branch, you can still find the commits in the reflog. And simply
-<code>git cherry-pick</code> whatever you need.</p>{{end}}
+<code>git cherry-pick</code> whatever you need.</p>

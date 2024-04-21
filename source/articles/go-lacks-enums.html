@@ -1,8 +1,10 @@
-{{define "title"}}Go lacks enums{{end}}
-{{define "date"}}2020-09-20{{end}}
-{{define "tags"}}go,programming{{end}}
-{{define "description"}}Thoughts on why the lack of enums is a small step backwards.{{end}}
-{{define "content"}}<p>As a Java programmer, I heavily make use of enums.
+title: Go lacks enums
+date: 2020-09-20
+tags: [go,programming]
+description: Thoughts on why the lack of enums is a small step backwards.
+
+---
+<p>As a Java programmer, I heavily make use of enums.
 The reason is quite simple. Whenever I have a fixed set of values, i can easily
 iterate over them and switch over them. The reason why I really like switching
 over enums though, is that I am using an IDE that notifies me of every switch
@@ -69,4 +71,4 @@ manually create another value with the same type. The problem is, that anyone ca
 basically do this. So you never know whether you get some weird and unexpected
 values at runtime. While you can still handle those with a <code>default</code>
 case, my problem here really is the lack of static analysis and warnings. As the
-compiler basically can't know whether you've handled all cases.</p>{{end}}
+compiler basically can't know whether you've handled all cases.</p>

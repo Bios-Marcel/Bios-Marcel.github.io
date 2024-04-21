@@ -1,8 +1,10 @@
-{{define "title"}}Be careful when moving files within a git repository{{end}}
-{{define "description"}}How to correctly move a file with git, without losing the history of that file.{{end}}
-{{define "date"}}2019-04-19{{end}}
-{{define "tags"}}git,vcs{{end}}
-{{define "content"}}<p>So, today I learned something interesting about git that I have been doing
+title: Be careful when moving files within a git repository
+description: How to correctly move a file with git, without losing the history of that file.
+date: 2019-04-19
+tags: [git,vcs]
+
+---
+<p>So, today I learned something interesting about git that I have been doing
 wrong way too often without even noticing it.</p>
 
 <p>Imagine the following scenario:</p>
@@ -74,4 +76,4 @@ full repository history.</p>
 
 <p>In order to prevent this loss of file history you simply have to first commit
 the rename of the file and then do your changes. Never do renaming and changing
-of the content in one commit.</p>{{end}}
+of the content in one commit.</p>

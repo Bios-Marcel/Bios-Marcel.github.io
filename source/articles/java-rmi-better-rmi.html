@@ -1,8 +1,10 @@
-{{define "title"}}Java RMI - Better error handling and performance with lambdas{{end}}
-{{define "tags"}}java,programming{{end}}
-{{define "date"}}2020-06-19{{end}}
-{{define "description"}}My experience on solving certain performance problems with RMI.{{end}}
-{{define "content"}}<p>Even though Java RMI is already very old and has some problems, there are
+title: Java RMI - Better error handling and performance with lambdas
+tags: [java,programming]
+date: 2020-06-19
+description: My experience on solving certain performance problems with RMI.
+
+---
+<p>Even though Java RMI is already very old and has some problems, there are
 still a lot of application that use it. While some applications have no
 time, money or resources to migrate away from RMI, others might not be able to
 migrate away, due to the fact that the RMI-Stubs they consume are external
@@ -94,4 +96,4 @@ User user = Services.get(UserService.class, userService -> userService.findByID(
 System.out.println(user.getRegisteredDate());
 </pre></code>
 
-<p>I hope this will help someone in the future ;)</p>{{end}}
+<p>I hope this will help someone in the future ;)</p>

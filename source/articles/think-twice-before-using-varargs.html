@@ -1,7 +1,9 @@
-{{define "title"}}Think Twice Before Using Varargs{{end}}
-{{define "date"}}2018-12-11{{end}}
-{{define "tags"}}java,programming{{end}}
-{{define "content"}}<p>Varargs, which is short for
+title: Think Twice Before Using Varargs
+date: 2018-12-11
+tags: [java,programming]
+
+---
+<p>Varargs, which is short for
 <a href="https://en.wikipedia.org/wiki/Variadic_function">variadic arguments</a>,
 are a pretty cool thing. They allow your functions to take from 0 to n
 arguments, the amount of possible function arguments might differ from
@@ -109,4 +111,4 @@ As you can see, this requires some additional logic, but it would usage wise be
 the same for the methodcaller, unless the intention was to actually pass a
 complete array, in that case the caller would have to create a new smaller array
 and pass the first cell of the old array as the first parameter. This would also
-be worse performance wise, even though this would usually not be critical.{{end}}
+be worse performance wise, even though this would usually not be critical.
