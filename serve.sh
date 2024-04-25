@@ -1,1 +1,1 @@
-stasi-blog dev -v ./source0
+stasi-blog dev -v ./source
