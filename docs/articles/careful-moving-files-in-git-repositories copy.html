@@ -6,7 +6,7 @@ wrong way too often without even noticing it.</p><p>Imagine the following scenar
 static sentence <code>Hello user.</code>. At this point and time the commit history for
 the file looks like this:</p><code><pre>
 ~/code/hello (master)$ git log --follow hello.go
-commit 03c325f415ca2418fa9bf9f759ca1fc16f50c8e6 (HEAD -> master)
+commit 03c325f415ca2418fa9bf9f759ca1fc16f50c8e6 (HEAD -&gt; master)
 Author: Marcel Schramm <marceloschr@googlemail.com>
 Date:   Fri Apr 19 19:11:06 2019 +0200
 
@@ -24,7 +24,7 @@ since it doesn't simply say <code>Hello user.</code> anymore, so you rename it:<
 this, so you add your new file to the staging area:</p><pre><code>
 ~/code/hello (master *+)$ git add greeter.go
 </pre></code><p>Finally you commit:</p><code><pre>
-~/code/hello (master +)$ git commit -m "Rename hello.go to greeter.go, since it is more fitting. Change output depending on the daytime and optionally accept a username."
+~/code/hello (master +)$ git commit -m &#34;Rename hello.go to greeter.go, since it is more fitting. Change output depending on the daytime and optionally accept a username.&#34;
 [master d003cc6] Rename hello.go to greeter.go, since it is more fitting. Change output depending on the daytime and optionally accept a username.
  2 files changed, 1 insertion(+), 1 deletion(-)
  create mode 100644 greeter.go
@@ -32,7 +32,7 @@ this, so you add your new file to the staging area:</p><pre><code>
 </pre></code><p>Fine, you are good to move on! Next day you wanna see the history, so you call
 git log on your <code>greeter.go</code> file:</p><code><pre>
 ~/code/hello (master)$ git log --follow greeter.go
- commit 33a3c028ef060c600164f0f7c7757012426f319c (HEAD -> master)
+ commit 33a3c028ef060c600164f0f7c7757012426f319c (HEAD -&gt; master)
  Author: Marcel Schramm <marceloschr@googlemail.com>
  Date:   Fri Apr 19 19:29:26 2019 +0200
  

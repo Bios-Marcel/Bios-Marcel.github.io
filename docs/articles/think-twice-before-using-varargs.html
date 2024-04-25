@@ -8,15 +8,15 @@ arguments, the amount of possible function arguments might differ from
 language to language though. Most of you have probably already used a
 function which makes use of varargs. Throughout this blog post, I am gonna
 use Java for examples.</p><p>As an example, let's look at <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...">String.format(String, Object...)</a>:</p><code><pre>
-String name = "Marcel"
-String.format("Hello %s.%nThe weather is quite good today.", name);
+String name = &#34;Marcel&#34;
+String.format(&#34;Hello %s.%nThe weather is quite good today.&#34;, name);
 </pre></code><p>The resulting String would look like this:</p><samp><pre>
 Hello Marcel.
 The weather is quite good today.
 </pre></samp><p>We could also use the function to just add a line break, but pass no additional
 variables:</p><code><pre>
-String name = "Marcel"
-String.format("Hello.%nThe weather is quite good today.");
+String name = &#34;Marcel&#34;
+String.format(&#34;Hello.%nThe weather is quite good today.&#34;);
 </pre></code><p>This would still compile, since varargs allow from 0 to n arguments, which
 is totally fine for our use case though.</p><p>But let's look at a more dangerous example:</p><code><pre>
 class Screamer {
@@ -27,7 +27,7 @@ class Screamer {
      */
     void screamWords(String... words) {
         for( String word: words ) {
-            System.out.println("Scream: " + words.toUpperCase());
+            System.out.println(&#34;Scream: &#34; + words.toUpperCase());
         }
     }
 }
@@ -37,7 +37,7 @@ class IntenseScreamer extends Screamer{
     void screamWords(String... words) {
         //Intensify the words by adding exclamation marks!
         for( int index = 0; index &lt; words.length; index++ ) {
-            words[index] = words[index] + "!!!";
+            words[index] = words[index] + &#34;!!!&#34;;
         }
 
         super.screamWords();
@@ -68,7 +68,7 @@ void hello(String nameOne, String... restOfNames) {
 }
 
 //Calling it
-hello("Marcel", "Jeff", "John");
+hello(&#34;Marcel&#34;, &#34;Jeff&#34;, &#34;John&#34;);
 </pre></code>As you can see, this requires some additional logic, but it would usage wise be
 the same for the methodcaller, unless the intention was to actually pass a
 complete array, in that case the caller would have to create a new smaller array
