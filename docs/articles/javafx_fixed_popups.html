@@ -1,70 +1,63 @@
 <!doctype html><html lang="en-GB"><head><link rel="stylesheet" href="/base.css"><link rel="icon" href="data:,"><title>JavaFX - Fixed Popups | Marcel Schramm</title>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Marcel Schramm"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Marcel Schramm"><meta property="og:title" content="JavaFX - Fixed Popups"><meta property="og:type" content="article"><meta property="article:tag" content="java"><meta property="article:tag" content="javafx"><meta property="article:tag" content="programming"><meta property="article:published_time" content="2024-07-18T00:00:00Z"></head><body><header><div class="site-name"><a href="/">Marcel Schramm</a></div><nav><a href="/feed.xml" download>RSS-Feed</a>
-<a href="/pages/about.html">About</a><a href="/pages/cv.html">CV</a></nav></header><article><h1 class="article-h1">JavaFX - Fixed Popups</h1><span class="authoring-info">Written on 18 July 2024 by Marcel Schramm</span>
-I am currently working on a small autocompletion text field. I want the
+<a href="/pages/about.html">About</a><a href="/pages/cv.html">CV</a></nav></header><article><h1 class="article-h1">JavaFX - Fixed Popups</h1><span class="authoring-info">Written on 18 July 2024 by Marcel Schramm</span><p>I am currently working on a small autocompletion text field. I want the
 component to show a small popup with completion possibilities whenever any are
-available at the current cursor location.
-I thought "That's gotta be easy, just call `new Popup()` and invoke `show()` ...
-well, it didn't work too well. The popup would initially show correctly, but
-also not hide clicking anywhere. This is due to the fact you have to set
-`autoHide` to `true`.
-After setting `autoHide`, it would however hide when you move the window or
+available at the current cursor location.</p><p>I thought "That's gotta be easy, just call <code>new Popup()</code> and invoke
+<code>show()</code> ... well, it didn't work too well. The popup would
+initially show correctly, but also not hide clicking anywhere. This is due
+to the fact you have to set `autoHide` to `true`.</p><p>After setting <code>autoHide</code>, it would however hide when you move the window or
 click in some area that can't receive focus anyway. This means the text field
 would still have focus, but no popup showing. This is quite annoying, as this
 means we can't bind the popup visiblity to the focus. While a workaround would
-be to listen to `KeyEvent` and `MouseEvent` to re-show the popup, this is janky.
-Time to make my own popup I guess?
-I found an [interesting post guiding me the right
-way](https://quollwriter.wordpress.com/2019/04/08/how-to-create-a-popup-pane-in-javafx/).
-This solution would allow me to freely place any component inside of a `Pane`.
-The only issue with this solution, is that it changes the bounds of the popups
-parent. So our hierarchy Would Be `Pane(TextField, Popup)`.
-To solve the layouting issue, the following rough setup is required:
-```java
-final var textField = new TextField("I am a TextField");
-final var popup = new Label("I am a Popup");
-popup.setVisible(false);
-popup.setManaged(false);
-final var pane = new Pane();
-pane.getChildren().addAll(textField, popup);
-pane.maxHeightProperty().bind(textField.heightProperty());
-pane.maxWidthProperty().bind(textField.widthProperty());
-showPopup();
-```
-Calling `setManaged(false)` on the `popup` will prevent it from being layouted,
-but also prevent it from expanding the parent in size. Since the parent is now
-bound to the size of the `textField`, we won't be pushing other components in
-the layout.
-However, since `popup` isn't being layouted, it does not have a position.
-While the methods `setLayoutX` and `setLayoutY` exist, they have no effect, as
-we are effectively not part of a layout. Instead we need to call `setTranslateY`
-and `setTranslateX`:
-```java
-private void showPopup() {
-popup.setVisible(true);
-final var textFieldBounds = textField.getBoundsInParent();
-popup.setTranslateY(textFieldBounds.getMaxY());
-popup.setTranslateX(textFieldBounds.getMinX());
-...
-}
-```
-In order to show the text field, we need to always bring all components in its
+be to listen to <code>KeyEvent</code> and <code>MouseEvent</code> to re-show
+the popup, this is janky.</p><p>Time to make my own popup I guess?
+I found an <a href="https://quollwriter.wordpress.com/2019/04/08/how-to-create-a-popup-pane-in-javafx/">interesting post guiding me the right way</a>.</p><p>This solution would allow me to freely place any component inside of a
+<code>Pane</code>. The only issue with this solution, is that it changes
+the bounds of the popups parent. So our hierarchy Would Be
+<code>Pane(TextField, Popup)</code>.</p><p>To solve the layouting issue, the following rough setup is required:</p><code><pre>
+        final var textField = new TextField(&#34;I am a TextField&#34;);
+
+        final var popup = new Label(&#34;I am a Popup&#34;);
+        popup.setVisible(false);
+        popup.setManaged(false);
+
+        final var pane = new Pane();
+        pane.getChildren().addAll(textField, popup);
+        pane.maxHeightProperty().bind(textField.heightProperty());
+        pane.maxWidthProperty().bind(textField.widthProperty());
+
+        showPopup();
+    </pre></code>Calling <code>setManaged(false)</code> on the <code>popup</code> will prevent
+it from being layouted, but also prevent it from expanding the parent in size.
+Since the parent is now bound to the size of the <code>textField</code>, we
+won't be pushing other components in the layout.
+However, since <code>popup</code> isn't being layouted, it does not have a position.
+While the methods <code>setLayoutX</code> and <code>setLayoutY</code> exist, they
+have no effect, as we are effectively not part of a layout. Instead we need to
+call <code>setTranslateY</code> and <code>setTranslateX</code>:
+<code><pre>
+        private void showPopup() {
+            popup.setVisible(true);
+            final var textFieldBounds = textField.getBoundsInParent();
+            popup.setTranslateY(textFieldBounds.getMaxY());
+            popup.setTranslateX(textFieldBounds.getMinX());
+            ...
+        }
+    </pre></code><p>In order to show the text field, we need to always bring all components in its
 hierarchy to the front, as the popup will otherwise render partially behind
-other components in any nested layout. However, calling `Node#toFront` will
-actually reposition the nodes. Instead, we set the `viewOrder` to a negative
-value for the full node hierarchy:
-```java
-private void showPopup() {
-...
-toFront(popup);
-}
-private void toFront(Node node) {
-node.setViewOrder(-1);
-if (node.getParent() != null) {
-toFront(node.getParent());
-}
-}
-```
-I hope someone can make use of this wild hack 😀
-<script src="https://utteranc.es/client.js" repo="Bios-Marcel/bios-marcel.github.io" issue-term="title" theme="preferred-color-scheme" async>
+other components in any nested layout. However, calling
+<code>Node#toFront</code> will actually reposition the nodes. Instead, we set
+the <code>viewOrder</code> to a negative value for the full node hierarchy:</p><code><pre>
+        private void showPopup() {
+            ...
+            toFront(popup);
+        }
+
+        private void toFront(Node node) {
+            node.setViewOrder(-1);
+            if (node.getParent() != null) {
+                toFront(node.getParent());
+            }
+        }
+    </pre></code><p>I hope someone can make use of this wild hack 😀</p><script src="https://utteranc.es/client.js" repo="Bios-Marcel/bios-marcel.github.io" issue-term="title" theme="preferred-color-scheme" async>
                         </script><noscript><hr><p><b>If you wish to access the comment section, you need to enable JavaScript.</b></p><p>Alternatively, you can try reading the comment directly on GitHub:</p><a href="https://github.com/Bios-Marcel/bios-marcel.github.io/issues?q=is%3Aissue+is%3Aopen+%22JavaFX%20-%20Fixed%20Popups%22+in%3Atitle">Find comments for JavaFX - Fixed Popups</a></noscript></article></body></html>
