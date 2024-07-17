@@ -6,6 +6,96 @@
     <managingEditor>marcelschr@protonmail.com (Marcel Schramm)</managingEditor>
     <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
     <item>
+      <title>JavaFX - Fixed Popups</title>
+      <link>https://bios-marcel.link/articles/javafx_fixed_popups.html</link>
+      <description>thoughts on random topics, but mostly tech</description>
+      <content:encoded><![CDATA[
+I am currently working on a small autocompletion text field. I want the
+component to show a small popup with completion possibilities whenever any are
+available at the current cursor location.
+
+I thought "That's gotta be easy, just call `new Popup()` and invoke `show()` ...
+well, it didn't work too well. The popup would initially show correctly, but
+also not hide clicking anywhere. This is due to the fact you have to set
+`autoHide` to `true`.
+
+After setting `autoHide`, it would however hide when you move the window or
+click in some area that can't receive focus anyway. This means the text field
+would still have focus, but no popup showing. This is quite annoying, as this
+means we can't bind the popup visiblity to the focus. While a workaround would
+be to listen to `KeyEvent` and `MouseEvent` to re-show the popup, this is janky.
+
+Time to make my own popup I guess?
+I found an [interesting post guiding me the right
+way](https://quollwriter.wordpress.com/2019/04/08/how-to-create-a-popup-pane-in-javafx/).
+
+This solution would allow me to freely place any component inside of a `Pane`.
+The only issue with this solution, is that it changes the bounds of the popups
+parent. So our hierarchy Would Be `Pane(TextField, Popup)`.
+
+To solve the layouting issue, the following rough setup is required:
+
+```java
+final var textField = new TextField("I am a TextField");
+
+final var popup = new Label("I am a Popup");
+popup.setVisible(false);
+popup.setManaged(false);
+
+final var pane = new Pane();
+pane.getChildren().addAll(textField, popup);
+pane.maxHeightProperty().bind(textField.heightProperty());
+pane.maxWidthProperty().bind(textField.widthProperty());
+
+showPopup();
+```
+
+Calling `setManaged(false)` on the `popup` will prevent it from being layouted,
+but also prevent it from expanding the parent in size. Since the parent is now
+bound to the size of the `textField`, we won't be pushing other components in
+the layout.
+
+However, since `popup` isn't being layouted, it does not have a position.
+While the methods `setLayoutX` and `setLayoutY` exist, they have no effect, as
+we are effectively not part of a layout. Instead we need to call `setTranslateY`
+and `setTranslateX`:
+
+```java
+private void showPopup() {
+popup.setVisible(true);
+final var textFieldBounds = textField.getBoundsInParent();
+popup.setTranslateY(textFieldBounds.getMaxY());
+popup.setTranslateX(textFieldBounds.getMinX());
+...
+}
+```
+
+In order to show the text field, we need to always bring all components in its
+hierarchy to the front, as the popup will otherwise render partially behind
+other components in any nested layout. However, calling `Node#toFront` will
+actually reposition the nodes. Instead, we set the `viewOrder` to a negative
+value for the full node hierarchy:
+
+```java
+private void showPopup() {
+...
+toFront(popup);
+}
+
+private void toFront(Node node) {
+node.setViewOrder(-1);
+if (node.getParent() != null) {
+toFront(node.getParent());
+}
+}
+```
+
+I hope someone can make use of this wild hack 😀
+]]></content:encoded>
+      <author>marcelschr@protonmail.com (Marcel Schramm)</author>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>Dear Recruiters</title>
       <link>https://bios-marcel.link/articles/dear-recruiters.html</link>
       <description>thoughts on random topics, but mostly tech</description>
@@ -1186,96 +1276,6 @@ services should be free?
 <p>I have probably just scratched the surface of what might be important to some people, sorry for that.</p>
 
 <p>If you find any mistakes, like wrong information or typos, feel free to submit a pull request.</p>
-]]></content:encoded>
-      <author>marcelschr@protonmail.com (Marcel Schramm)</author>
-      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>JavaFX - Fixed Popups</title>
-      <link>https://bios-marcel.link/articles/javafx_fixed_popups.html</link>
-      <description>thoughts on random topics, but mostly tech</description>
-      <content:encoded><![CDATA[
-I am currently working on a small autocompletion text field. I want the
-component to show a small popup with completion possibilities whenever any are
-available at the current cursor location.
-
-I thought "That's gotta be easy, just call `new Popup()` and invoke `show()` ...
-well, it didn't work too well. The popup would initially show correctly, but
-also not hide clicking anywhere. This is due to the fact you have to set
-`autoHide` to `true`.
-
-After setting `autoHide`, it would however hide when you move the window or
-click in some area that can't receive focus anyway. This means the text field
-would still have focus, but no popup showing. This is quite annoying, as this
-means we can't bind the popup visiblity to the focus. While a workaround would
-be to listen to `KeyEvent` and `MouseEvent` to re-show the popup, this is janky.
-
-Time to make my own popup I guess?
-I found an [interesting post guiding me the right
-way](https://quollwriter.wordpress.com/2019/04/08/how-to-create-a-popup-pane-in-javafx/).
-
-This solution would allow me to freely place any component inside of a `Pane`.
-The only issue with this solution, is that it changes the bounds of the popups
-parent. So our hierarchy Would Be `Pane(TextField, Popup)`.
-
-To solve the layouting issue, the following rough setup is required:
-
-```java
-final var textField = new TextField("I am a TextField");
-
-final var popup = new Label("I am a Popup");
-popup.setVisible(false);
-popup.setManaged(false);
-
-final var pane = new Pane();
-pane.getChildren().addAll(textField, popup);
-pane.maxHeightProperty().bind(textField.heightProperty());
-pane.maxWidthProperty().bind(textField.widthProperty());
-
-showPopup();
-```
-
-Calling `setManaged(false)` on the `popup` will prevent it from being layouted,
-but also prevent it from expanding the parent in size. Since the parent is now
-bound to the size of the `textField`, we won't be pushing other components in
-the layout.
-
-However, since `popup` isn't being layouted, it does not have a position.
-While the methods `setLayoutX` and `setLayoutY` exist, they have no effect, as
-we are effectively not part of a layout. Instead we need to call `setTranslateY`
-and `setTranslateX`:
-
-```java
-private void showPopup() {
-popup.setVisible(true);
-final var textFieldBounds = textField.getBoundsInParent();
-popup.setTranslateY(textFieldBounds.getMaxY());
-popup.setTranslateX(textFieldBounds.getMinX());
-...
-}
-```
-
-In order to show the text field, we need to always bring all components in its
-hierarchy to the front, as the popup will otherwise render partially behind
-other components in any nested layout. However, calling `Node#toFront` will
-actually reposition the nodes. Instead, we set the `viewOrder` to a negative
-value for the full node hierarchy:
-
-```java
-private void showPopup() {
-...
-toFront(popup);
-}
-
-private void toFront(Node node) {
-node.setViewOrder(-1);
-if (node.getParent() != null) {
-toFront(node.getParent());
-}
-}
-```
-
-I hope someone can make use of this wild hack 😀
 ]]></content:encoded>
       <author>marcelschr@protonmail.com (Marcel Schramm)</author>
       <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
