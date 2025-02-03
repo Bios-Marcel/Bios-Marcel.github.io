@@ -1,0 +1,20 @@
+<!doctype html><html lang="en-GB"><head><link rel="stylesheet" href="/base.css"><link rel="icon" href="data:,"><title>Asciinema Support For My Blog! | Marcel Schramm</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="author" content="Marcel Schramm"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="Marcel Schramm"><meta property="og:title" content="Asciinema Support For My Blog!"><meta property="og:type" content="article"><meta property="article:tag" content="showcase"><meta property="article:published_time" content="2025-02-03T00:00:00Z"><link rel="stylesheet" href="/asciinema-player.css"></head><body><header><div class="site-name"><a href="/">Marcel Schramm</a></div><nav><a href="/feed.xml" download>RSS-Feed</a>
+<a href="/pages/about.html">About</a><a href="/pages/cv.html">CV</a></nav></header><article><h1 class="article-h1">Asciinema Support For My Blog!</h1><span class="authoring-info">Written on 3 February 2025 by Marcel Schramm</span><p>I often want to have console output in my blogposts. Since I don't want to
+upload videos, due to their size, I just create code boxes.</p><p>However, I thought it'd also be cool to use asciinema, but I didn't want
+to rely on their servers. Thankfully you can embed the player JS and
+selfhost the files!</p><p>While the API is a bit awkward, as you manually have to inject the components
+into `div` elements, it does work like a charm.<p>To embed an asciicast into a blogpost, all I have to do now, is this:</p><code><pre>&lt;asciicast src=&#39;/media/demo.cast&#39; /&gt;</pre></code><p>Which is then automatically turned into this:</p><div id="60fc7a19"></div><p>This partially happens at generation time and partially at runtime. The goal
+is to avoid loading any additional JS or stylesheet if possible.</p><script>
+            let script = document.createElement('script');
+            script.src = "/asciinema-player.min.js";
+            script.async = true;
+            script.onload = function () {
+                
+                AsciinemaPlayer.create('\/media\/demo.cast',
+                    document.getElementById('60fc7a19'));
+                
+            };
+            document.head.appendChild(script);
+        </script><script src="https://utteranc.es/client.js" repo="Bios-Marcel/bios-marcel.github.io" issue-term="title" theme="preferred-color-scheme" async>
+            </script><noscript><hr><p><b>If you wish to access the comment section, you need to enable JavaScript.</b></p><p>Alternatively, you can try reading the comment directly on GitHub:</p><a href="https://github.com/Bios-Marcel/bios-marcel.github.io/issues?q=is%3Aissue+is%3Aopen+%22Asciinema%20Support%20For%20My%20Blog%21%22+in%3Atitle">Find comments for Asciinema Support For My Blog!</a></noscript></article></body></html>

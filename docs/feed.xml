@@ -6,6 +6,36 @@
     <managingEditor>marcelschr@protonmail.com (Marcel Schramm)</managingEditor>
     <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
     <item>
+      <title>Asciinema Support For My Blog!</title>
+      <link>https://bios-marcel.link/articles/asciinema_support.html</link>
+      <description>thoughts on random topics, but mostly tech</description>
+      <content:encoded><![CDATA[<p>I often want to have console output in my blogposts. Since I don't want to
+    upload videos, due to their size, I just create code boxes.</p>
+
+<p>However, I thought it'd also be cool to use asciinema, but I didn't want
+    to rely on their servers. Thankfully you can embed the player JS and
+    selfhost the files!</p>
+
+<p>While the API is a bit awkward, as you manually have to inject the components
+    into `div` elements, it does work like a charm.
+
+<p>To embed an asciicast into a blogpost, all I have to do now, is this:</p>
+
+<code>
+    <pre>&lt;asciicast src='/media/demo.cast' /&gt;</pre>
+</code>
+
+<p>Which is then automatically turned into this:</p>
+
+<asciicast src="/media/demo.cast" />
+
+<p>This partially happens at generation time and partially at runtime. The goal
+    is to avoid loading any additional JS or stylesheet if possible.</p>
+]]></content:encoded>
+      <author>marcelschr@protonmail.com (Marcel Schramm)</author>
+      <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>JavaFX - Fixed Popups</title>
       <link>https://bios-marcel.link/articles/javafx_fixed_popups.html</link>
       <description>thoughts on random topics, but mostly tech</description>

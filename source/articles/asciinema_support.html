@@ -1,0 +1,27 @@
+title: Asciinema Support For My Blog!
+date: 2025-02-03
+tags: [showcase]
+
+---
+<p>I often want to have console output in my blogposts. Since I don't want to
+    upload videos, due to their size, I just create code boxes.</p>
+
+<p>However, I thought it'd also be cool to use asciinema, but I didn't want
+    to rely on their servers. Thankfully you can embed the player JS and
+    selfhost the files!</p>
+
+<p>While the API is a bit awkward, as you manually have to inject the components
+    into `div` elements, it does work like a charm.
+
+<p>To embed an asciicast into a blogpost, all I have to do now, is this:</p>
+
+<code>
+    <pre>&lt;asciicast src='/media/demo.cast' /&gt;</pre>
+</code>
+
+<p>Which is then automatically turned into this:</p>
+
+<asciicast src="/media/demo.cast" />
+
+<p>This partially happens at generation time and partially at runtime. The goal
+    is to avoid loading any additional JS or stylesheet if possible.</p>
